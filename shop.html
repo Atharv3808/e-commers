@@ -8,83 +8,186 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Farm Fresh</h1>
-        <p>Quality Farm Products Direct to Your Door</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Fresh from Our Farm to Your Table</h1>
-            <p>Experience the best quality organic and sustainably grown farm products. Support local farming and enjoy nature's freshest bounty.</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </section>
-    
-    <div class="container">
-        <section id="categories">
-            <h2 class="section-title">Product Categories</h2>
-            <div class="categories">
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Fresh Vegetables</h3>
-                        <p>Organically grown vegetables harvested at peak freshness.</p>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Fresh Fruits</h3>
-                        <p>Sweet and juicy fruits grown with care on our farms.</p>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Dairy Products</h3>
-                        <p>Farm-fresh milk, cheese, and other dairy items.</p>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Free-Range Eggs</h3>
-                        <p>Eggs from happy, pasture-raised chickens.</p>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Honey & Preserves</h3>
-                        <p>Natural honey and homemade fruit preserves.</p>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('/api/placeholder/300/200')"></div>
-                    <div class="category-content">
-                        <h3>Artisanal Breads</h3>
-                        <p>Freshly baked breads using organic flour.</p>
-                    </div>
+    <button onclick="goBack()" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        ← Go Back
+      <link rel="stylesheet" href="index.html"></button>
+      
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+    <section id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Organic Tomatoes</h3>
+                    <p class="product-price">$3.99/lb</p>
+                    <p>Vine-ripened fresh tomatoes.</p>
+                    <button class="product-btn">Add to Cart</button>
                 </div>
             </div>
-        </section>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Fresh Spinach</h3>
+                    <p class="product-price">$2.49/bunch</p>
+                    <p>Tender and nutrient-rich spinach.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Organic Apples</h3>
+                    <p class="product-price">$4.99/lb</p>
+                    <p>Sweet and crisp seasonal apples.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Fresh Eggs</h3>
+                    <p class="product-price">$5.99/dozen</p>
+                    <p>Free-range eggs from happy hens.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Raw Honey</h3>
+                    <p class="product-price">$8.99/jar</p>
+                    <p>Pure, unfiltered local honey.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Organic Milk</h3>
+                    <p class="product-price">$4.49/half gallon</p>
+                    <p>Fresh milk from grass-fed cows.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Artisan Bread</h3>
+                    <p class="product-price">$5.99/loaf</p>
+                    <p>Freshly baked sourdough bread.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+                <div class="product-content">
+                    <h3>Fresh Carrots</h3>
+                    <p class="product-price">$2.99/bunch</p>
+                    <p>Sweet and crunchy organic carrots.</p>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section id="products">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="products">
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Organic Tomatoes</h3>
+                <p class="product-price">$3.99/lb</p>
+                <p>Vine-ripened fresh tomatoes.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
         
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Fresh Spinach</h3>
+                <p class="product-price">$2.49/bunch</p>
+                <p>Tender and nutrient-rich spinach.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Organic Apples</h3>
+                <p class="product-price">$4.99/lb</p>
+                <p>Sweet and crisp seasonal apples.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Fresh Eggs</h3>
+                <p class="product-price">$5.99/dozen</p>
+                <p>Free-range eggs from happy hens.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Raw Honey</h3>
+                <p class="product-price">$8.99/jar</p>
+                <p>Pure, unfiltered local honey.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Organic Milk</h3>
+                <p class="product-price">$4.49/half gallon</p>
+                <p>Fresh milk from grass-fed cows.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Artisan Bread</h3>
+                <p class="product-price">$5.99/loaf</p>
+                <p>Freshly baked sourdough bread.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('/api/placeholder/200/180')"></div>
+            <div class="product-content">
+                <h3>Fresh Carrots</h3>
+                <p class="product-price">$2.99/bunch</p>
+                <p>Sweet and crunchy organic carrots.</p>
+                <button class="product-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
         <section id="products">
             <h2 class="section-title">Featured Products</h2>
             <div class="products">
