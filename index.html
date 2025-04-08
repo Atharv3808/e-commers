@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleShop - Modern Fashion Store</title>
+    <title>VIBE | Gen Z Fashion & Lifestyle</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-mode">
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">StyleShop</a>
+                    <a href="index.html">VIBE<span>.</span></a>
                 </div>
                 
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for products...">
-                    <button><i class="fas fa-search"></i></button>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search for products...">
+                    </div>
+                    <div class="search-results" id="search-results"></div>
                 </div>
                 
                 <nav class="nav-menu">
                     <ul class="nav-list">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </nav>
                 
                 <div class="nav-icons">
-                    <a href="login.html" class="icon-link"><i class="fas fa-user"></i></a>
-                    <a href="cart.html" class="icon-link cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <button class="mobile-menu-btn">
+                    <button id="theme-toggle" class="icon-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlist-count">0</span>
+                    </button>
+                    <button class="icon-btn" id="cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </button>
+                    <button class="mobile-menu-btn icon-btn">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -46,175 +56,313 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">VIBE<span>.</span></div>
+            <button class="close-menu-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
         <div class="mobile-search">
+            <i class="fas fa-search"></i>
             <input type="text" placeholder="Search for products...">
-            <button><i class="fas fa-search"></i></button>
         </div>
         <ul class="mobile-nav-list">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="login.html">Login / Register</a></li>
-            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#" id="mobile-wishlist-btn">Wishlist</a></li>
+            <li><a href="#" id="mobile-cart-btn">Cart</a></li>
         </ul>
+        <div class="mobile-theme-toggle">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="mobile-theme-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-slider">
-            <div class="hero-slide active">
-                <div class="hero-content">
-                    <h1>Summer Collection 2025</h1>
-                    <p>Discover the latest trends in summer fashion</p>
-                    <a href="products.html" class="btn">Shop Now</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Express Your <span class="gradient-text">Unique Style</span></h1>
+                <p class="hero-subtitle">Discover the latest trends that match your vibe ✨</p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-primary">Shop Now</a>
+                    <a href="#trending" class="btn btn-outline">Trending</a>
                 </div>
             </div>
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <h1>New Arrivals</h1>
-                    <p>Be the first to shop our newest styles</p>
-                    <a href="products.html" class="btn">Explore</a>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <div class="hero-content">
-                    <h1>Special Offers</h1>
-                    <p>Limited time deals on selected items</p>
-                    <a href="products.html" class="btn">View Offers</a>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <span class="slider-dot active" data-slide="0"></span>
-                <span class="slider-dot" data-slide="1"></span>
-                <span class="slider-dot" data-slide="2"></span>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=500&width=500" alt="Stylish Gen Z model">
+                <div class="floating-badge badge-1">🔥 Hot Picks</div>
+                <div class="floating-badge badge-2">✨ New Arrivals</div>
+                <div class="floating-badge badge-3">🌈 Exclusive</div>
             </div>
         </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section class="featured-products section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Products</h2>
-                <p>Discover our handpicked selection of trending products that combine style, quality, and value.</p>
-            </div>
-            <div class="products-grid" id="featured-products">
-                <!-- Products will be loaded dynamically with JavaScript -->
-                <div class="product-card skeleton"></div>
-                <div class="product-card skeleton"></div>
-                <div class="product-card skeleton"></div>
-                <div class="product-card skeleton"></div>
-            </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories-section section">
+    <section class="categories-section" id="categories">
         <div class="container">
             <div class="section-header">
-                <h2>Shop by Category</h2>
-                <p>Browse our collections and find the perfect style for you</p>
+                <h2>Shop by <span class="gradient-text">Category</span></h2>
+                <p>Find your perfect style match</p>
             </div>
             <div class="categories-grid">
-                <a href="products.html?category=women" class="category-card">
-                    <div class="category-img">
-                        <img src="https://via.placeholder.com/400x400" alt="Women's Fashion">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Clothing">
                     </div>
-                    <h3>Women</h3>
-                </a>
-                <a href="products.html?category=men" class="category-card">
-                    <div class="category-img">
-                        <img src="https://via.placeholder.com/400x400" alt="Men's Fashion">
-                    </div>
-                    <h3>Men</h3>
-                </a>
-                <a href="products.html?category=accessories" class="category-card">
-                    <div class="category-img">
-                        <img src="https://via.placeholder.com/400x400" alt="Accessories">
+                    <h3>Clothing</h3>
+                    <a href="#" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Accessories">
                     </div>
                     <h3>Accessories</h3>
-                </a>
-                <a href="products.html?category=footwear" class="category-card">
-                    <div class="category-img">
-                        <img src="https://via.placeholder.com/400x400" alt="Footwear">
+                    <a href="#" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Footwear">
                     </div>
                     <h3>Footwear</h3>
-                </a>
+                    <a href="#" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Beauty">
+                    </div>
+                    <h3>Beauty</h3>
+                    <a href="#" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section section">
+    <!-- Trending Section -->
+    <section class="trending-section" id="trending">
         <div class="container">
             <div class="section-header">
-                <h2>What Our Customers Say</h2>
-                <p>Don't just take our word for it - hear from our satisfied customers</p>
+                <h2>Trending <span class="gradient-text">Now</span></h2>
+                <p>What's hot on social media right now</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://via.placeholder.com/100x100" alt="Sarah Johnson">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Regular Customer</p>
+            <div class="trending-feed">
+                <div class="trending-post">
+                    <div class="trending-image">
+                        <img src="/placeholder.svg?height=400&width=300" alt="Trending outfit">
+                        <div class="trending-overlay">
+                            <a href="#" class="trending-btn"><i class="fas fa-shopping-bag"></i> Shop this look</a>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="trending-info">
+                        <div class="trending-user">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User">
+                            <span>@fashionista</span>
+                        </div>
+                        <div class="trending-stats">
+                            <span><i class="fas fa-heart"></i> 2.4k</span>
+                            <span><i class="fas fa-comment"></i> 128</span>
+                        </div>
                     </div>
-                    <p class="testimonial-text">
-                        I absolutely love shopping at StyleShop! The quality of their products is outstanding, and their customer service is top-notch. I always receive compliments on my outfits from here.
-                    </p>
+                    <div class="trending-tags">
+                        <span>#aesthetic</span>
+                        <span>#vintage</span>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://via.placeholder.com/100x100" alt="Michael Chen">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Michael Chen</h4>
-                            <p>Fashion Enthusiast</p>
+                <div class="trending-post">
+                    <div class="trending-image">
+                        <img src="/placeholder.svg?height=400&width=300" alt="Trending outfit">
+                        <div class="trending-overlay">
+                            <a href="#" class="trending-btn"><i class="fas fa-shopping-bag"></i> Shop this look</a>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="trending-info">
+                        <div class="trending-user">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User">
+                            <span>@styleking</span>
+                        </div>
+                        <div class="trending-stats">
+                            <span><i class="fas fa-heart"></i> 3.1k</span>
+                            <span><i class="fas fa-comment"></i> 215</span>
+                        </div>
                     </div>
-                    <p class="testimonial-text">
-                        StyleShop has become my go-to store for all my fashion needs. Their collection is always up-to-date with the latest trends, and the prices are very reasonable.
-                    </p>
+                    <div class="trending-tags">
+                        <span>#minimal</span>
+                        <span>#streetwear</span>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-img">
-                            <img src="https://via.placeholder.com/100x100" alt="Emma Rodriguez">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Emma Rodriguez</h4>
-                            <p>Loyal Customer</p>
+                <div class="trending-post">
+                    <div class="trending-image">
+                        <img src="/placeholder.svg?height=400&width=300" alt="Trending outfit">
+                        <div class="trending-overlay">
+                            <a href="#" class="trending-btn"><i class="fas fa-shopping-bag"></i> Shop this look</a>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+                    <div class="trending-info">
+                        <div class="trending-user">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User">
+                            <span>@trendyvibes</span>
+                        </div>
+                        <div class="trending-stats">
+                            <span><i class="fas fa-heart"></i> 5.7k</span>
+                            <span><i class="fas fa-comment"></i> 342</span>
+                        </div>
                     </div>
-                    <p class="testimonial-text">
-                        The shipping is incredibly fast, and the return process is hassle-free. I appreciate how they pay attention to the smallest details in packaging. Will definitely continue shopping here!
-                    </p>
+                    <div class="trending-tags">
+                        <span>#y2k</span>
+                        <span>#retro</span>
+                    </div>
+                </div>
+                <div class="trending-post">
+                    <div class="trending-image">
+                        <img src="/placeholder.svg?height=400&width=300" alt="Trending outfit">
+                        <div class="trending-overlay">
+                            <a href="#" class="trending-btn"><i class="fas fa-shopping-bag"></i> Shop this look</a>
+                        </div>
+                    </div>
+                    <div class="trending-info">
+                        <div class="trending-user">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User">
+                            <span>@coolstyle</span>
+                        </div>
+                        <div class="trending-stats">
+                            <span><i class="fas fa-heart"></i> 4.2k</span>
+                            <span><i class="fas fa-comment"></i> 189</span>
+                        </div>
+                    </div>
+                    <div class="trending-tags">
+                        <span>#grunge</span>
+                        <span>#alternative</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop <span class="gradient-text">Products</span></h2>
+                <p>Curated collection of the coolest items</p>
+            </div>
+            
+            <div class="shop-filters">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="clothing">Clothing</button>
+                    <button class="filter-btn" data-filter="accessories">Accessories</button>
+                    <button class="filter-btn" data-filter="footwear">Footwear</button>
+                    <button class="filter-btn" data-filter="beauty">Beauty</button>
+                </div>
+                
+                <div class="filter-group">
+                    <button class="filter-btn tag-filter" data-tag="vintage">#vintage</button>
+                    <button class="filter-btn tag-filter" data-tag="aesthetic">#aesthetic</button>
+                    <button class="filter-btn tag-filter" data-tag="minimal">#minimal</button>
+                    <button class="filter-btn tag-filter" data-tag="y2k">#y2k</button>
+                </div>
+                
+                <div class="filter-dropdown">
+                    <button class="filter-dropdown-btn">
+                        Price <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-content">
+                        <button class="filter-option" data-price="all">All Prices</button>
+                        <button class="filter-option" data-price="0-25">Under $25</button>
+                        <button class="filter-option" data-price="25-50">$25 - $50</button>
+                        <button class="filter-option" data-price="50-100">$50 - $100</button>
+                        <button class="filter-option" data-price="100+">$100+</button>
+                    </div>
+                </div>
+                
+                <div class="filter-dropdown">
+                    <button class="filter-dropdown-btn">
+                        Color <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-content">
+                        <button class="filter-option" data-color="all">All Colors</button>
+                        <button class="filter-option color-option" data-color="black">
+                            <span class="color-swatch" style="background-color: #000;"></span> Black
+                        </button>
+                        <button class="filter-option color-option" data-color="white">
+                            <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span> White
+                        </button>
+                        <button class="filter-option color-option" data-color="blue">
+                            <span class="color-swatch" style="background-color: #a7c5eb;"></span> Blue
+                        </button>
+                        <button class="filter-option color-option" data-color="pink">
+                            <span class="color-swatch" style="background-color: #ffb6c1;"></span> Pink
+                        </button>
+                        <button class="filter-option color-option" data-color="green">
+                            <span class="color-swatch" style="background-color: #a0e7a0;"></span> Green
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="filter-dropdown">
+                    <button class="filter-dropdown-btn">
+                        Sort By <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-content">
+                        <button class="filter-option" data-sort="featured">Featured</button>
+                        <button class="filter-option" data-sort="newest">Newest</button>
+                        <button class="filter-option" data-sort="price-low">Price: Low to High</button>
+                        <button class="filter-option" data-sort="price-high">Price: High to Low</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded dynamically with JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-outline" id="load-more-btn">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>On all orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payments</h3>
+                    <p>Protected by encryption</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>We're here to help</p>
                 </div>
             </div>
         </div>
@@ -224,11 +372,11 @@
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Get updates on new arrivals, special offers and other discount information.</p>
+                <h2>Join Our <span class="gradient-text">Vibe Tribe</span></h2>
+                <p>Subscribe for exclusive deals, style tips, and early access to new drops 💌</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email address" required>
-                    <button type="submit" class="btn">Subscribe</button>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
         </div>
@@ -239,44 +387,45 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>StyleShop</h3>
-                    <p>Your one-stop shop for trendy fashion and accessories.</p>
+                    <div class="logo">VIBE<span>.</span></div>
+                    <p>Your go-to destination for trendy, Gen Z-approved fashion and lifestyle products.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
+                    <h4>Shop</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Sale</a></li>
+                        <li><a href="#">Collections</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Customer Service</h4>
+                    <h4>Help</h4>
                     <ul class="footer-links">
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion St, Los Angeles, CA</li>
-                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@styleshop.com</li>
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms & Privacy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 StyleShop. All rights reserved.</p>
+                <p>&copy; 2025 VIBE. All rights reserved.</p>
                 <div class="payment-methods">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
@@ -287,8 +436,114 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/products.js"></script>
-    <script src="js/cart.js"></script>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart-btn" id="close-cart-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="empty-cart" id="empty-cart">
+            <div class="empty-cart-illustration">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added anything to your cart yet 😢</p>
+            <button class="btn btn-primary" id="start-shopping-btn">Start Shopping</button>
+        </div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn">
+                Checkout <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>Your Wishlist</h3>
+            <button class="close-wishlist-btn" id="close-wishlist-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="wishlist-items" id="wishlist-items">
+            <!-- Wishlist items will be loaded dynamically -->
+        </div>
+        <div class="empty-wishlist" id="empty-wishlist">
+            <div class="empty-wishlist-illustration">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h3>Your wishlist is empty</h3>
+            <p>Save items you love for later 💖</p>
+            <button class="btn btn-primary" id="explore-products-btn">Explore Products</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="quick-view-content">
+            <button class="close-modal-btn" id="close-modal-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-product" id="quick-view-product">
+                <!-- Quick view content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Discount Wheel Popup -->
+    <div class="discount-popup" id="discount-popup">
+        <div class="discount-popup-content">
+            <button class="close-popup-btn" id="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Spin to Win! 🎡</h3>
+            <p>Try your luck and win exclusive discounts</p>
+            <div class="wheel-container">
+                <div class="wheel" id="discount-wheel">
+                    <div class="wheel-section" data-discount="10">10% OFF</div>
+                    <div class="wheel-section" data-discount="15">15% OFF</div>
+                    <div class="wheel-section" data-discount="20">20% OFF</div>
+                    <div class="wheel-section" data-discount="25">25% OFF</div>
+                    <div class="wheel-section" data-discount="30">30% OFF</div>
+                    <div class="wheel-section" data-discount="free">FREE SHIPPING</div>
+                </div>
+                <div class="wheel-pointer"></div>
+            </div>
+            <button class="btn btn-primary" id="spin-btn">Spin the Wheel</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+    </div>
+
+    <!-- Loyalty Badge -->
+    <div class="loyalty-badge" id="loyalty-badge">
+        <div class="badge-icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="badge-info">
+            <h4>Gen Z VIP</h4>
+            <p>You've unlocked VIP status! 👑</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
